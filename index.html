@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Patricia & Mario</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Open Sans',sans-serif;color:#2C3A4A;background:#F0F5FA}
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(rgba(44,58,74,0.7),rgba(44,58,74,0.7)),url('CASAL1.jpg') center/cover no-repeat;
+}
+.hero-content{position:relative;z-index:2;padding:20px;max-width:900px}
+.hero h1{
+  font-size:4rem;font-weight:800;letter-spacing:6px;text-transform:uppercase;
+  margin-bottom:10px;line-height:1.2
+}
+.hero .nome-patricia{color:#D4B87A}
+.hero .nome-mario{color:#D4B87A}
+.hero .e-comercial{color:#D4B87A;font-weight:300}
+.hero .data-destaque{font-size:1.4rem;color:rgba(255,255,255,0.9);font-weight:300;letter-spacing:3px;margin-bottom:8px}
+.hero .subtitulo{font-size:1.1rem;color:rgba(255,255,255,0.7);font-weight:300;letter-spacing:1px;margin-bottom:30px}
+.contador{display:flex;justify-content:center;gap:25px;flex-wrap:wrap}
+.contador-item{background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);border-radius:12px;padding:18px 25px;min-width:100px;border:1px solid rgba(255,255,255,0.15)}
+.contador-item .numero{font-size:2.5rem;font-weight:800;color:#D4B87A;display:block;line-height:1}
+.contador-item .rotulo{font-size:.75rem;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:2px;margin-top:5px;display:block}
+section{padding:80px 20px}
+.section-inner{max-width:1100px;margin:0 auto}
+.titulo-secao{
+  text-align:center;font-size:2rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:15px;color:#2C3A4A;
+}
+.titulo-secao::after{content:'';display:block;width:70px;height:3px;background:#D4B87A;margin:12px auto 0}
+.subtitulo-secao{text-align:center;color:#666;font-weight:300;font-size:1.1rem;margin-bottom:50px;max-width:700px;margin-left:auto;margin-right:auto}
+.card-icone-ad{
+  width:60px;height:60px;border-radius:50%;background:#D4B87A;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 15px;position:relative;
+}
+#detalhes{background:#F0F5FA}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px}
+.card{
+  background:#fff;border-radius:12px;padding:30px 20px 25px;text-align:center;
+  box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.card h3{font-size:1rem;font-weight:700;color:#5A8AA8;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.card p{font-size:.9rem;color:#555}
+.card-spacer{flex:1;min-height:30px}
+.btn-card{
+  display:inline-block;padding:8px 20px;border-radius:30px;
+  font-size:.8rem;font-weight:600;text-decoration:none;text-transform:uppercase;letter-spacing:1px;
+  transition:all .3s;align-self:center;
+}
+.btn-vinho{background:#800020;color:#fff;border:2px solid #800020}
+.btn-vinho:hover{background:#600018;border-color:#600018}
+#presentes{background:#7BA8C7}
+#presentes .titulo-secao{color:#fff}
+#presentes .titulo-secao::after{background:#fff}
+#presentes .subtitulo-secao{color:rgba(255,255,255,0.85)}
+.presentes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.presente-card{
+  background:#fff;border-radius:12px;padding:25px 15px;text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.1);display:flex;flex-direction:column;
+}
+.presente-card .content{flex:1}
+.presente-emoji{font-size:2.5rem;margin-bottom:8px}
+.presente-nome{font-weight:600;font-size:.9rem;color:#2C3A4A;margin-bottom:3px;line-height:1.3}
+.presente-valor{font-weight:700;font-size:1.2rem;color:#7BA8C7;margin-bottom:12px}
+.presente-actions{display:flex;flex-direction:column;gap:8px}
+.btn-amazon{
+  display:block;background:#fff;color:#2C3A4A;border:2px solid #7BA8C7;padding:8px 15px;border-radius:30px;
+  font-weight:600;font-size:.8rem;text-decoration:none;width:100%;
+}
+.btn-amazon:hover{background:#7BA8C7;color:#fff}
+.presente-btn{
+  background:#7BA8C7;color:#fff;border:none;padding:10px 15px;border-radius:30px;
+  font-weight:600;font-size:.85rem;cursor:pointer;width:100%;
+}
+.presente-btn:hover{background:#5A8AA8}
+.presente-btn:disabled{background:#999;cursor:not-allowed}
+.observacoes-bloco{
+  margin-top:50px;padding:25px 30px 20px;background:rgba(255,255,255,0.1);border-radius:12px;
+  border:1px solid rgba(255,255,255,0.2);text-align:center;max-width:800px;margin-left:auto;margin-right:auto;
+}
+.obs-endereco-titulo{
+  font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;
+  color:#1A3A5C;margin-bottom:10px;text-align:center;
+}
+.obs-endereco-info{
+  font-size:.85rem;font-weight:400;color:#1A3A5C;line-height:1.7;text-align:center;margin-bottom:50px;
+}
+.obs-sugestao{
+  font-size:.82rem;font-weight:800;font-style:italic;color:rgba(255,255,255,0.9);
+  text-align:center;line-height:1.6;
+}
+.modal-overlay{
+  display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center;
+}
+.modal-overlay.active{display:flex}
+.modal{
+  background:#fff;border-radius:16px;padding:35px;max-width:420px;width:90%;position:relative;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+.modal h2{font-size:1.2rem;color:#2C3A4A;margin-bottom:15px}
+.modal-info{
+  background:#f9f9f9;border-radius:10px;padding:15px;margin-bottom:20px;border:1px solid #e8e8e8;
+}
+.modal-info .emoji{font-size:2rem;display:block;margin-bottom:5px}
+.modal-info .label{font-size:.85rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.modal-info .item-nome{font-size:1.1rem;font-weight:700;color:#2C3A4A;margin-top:3px}
+.modal-info .item-valor{font-size:1rem;font-weight:600;color:#7BA8C7;margin-top:3px}
+.modal-input{
+  width:100%;padding:12px 15px;border:2px solid #ddd;border-radius:8px;
+  font-size:.95rem;margin-bottom:12px;font-family:'Open Sans',sans-serif;outline:none;
+}
+.modal-input:focus{border-color:#7BA8C7}
+.btn-confirmar{
+  background:#2C3A4A;color:#fff;border:none;padding:12px 30px;border-radius:30px;
+  font-weight:600;cursor:pointer;font-size:.95rem;width:100%;
+}
+.btn-confirmar:hover{background:#3A4A5A}
+.btn-fechar{position:absolute;top:10px;right:15px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#999}
+#fotos{background:#E3EEF5}
+.btn-foto{
+  display:inline-block;padding:14px 35px;border-radius:30px;background:#7BA8C7;color:#fff;
+  text-decoration:none;font-weight:600;font-size:1rem;margin-top:10px;
+}
+.btn-foto:hover{background:#5A8AA8}
+footer{text-align:center;padding:30px 20px;background:#2C3A4A;color:rgba(255,255,255,.5);font-size:.85rem}
+footer .heart{color:#D4B87A}
+#secaoAdmin{padding:20px 20px 60px}
+.btn-senha{
+  display:inline-block;padding:8px 20px;border-radius:30px;background:#2C3A4A;color:#fff;
+  border:none;font-weight:600;cursor:pointer;font-size:.8rem;margin-bottom:20px;
+}
+#painelAdmin{
+  display:none;background:#fff;border-radius:12px;padding:30px;margin-top:0;
+  box-shadow:0 4px 20px rgba(0,0,0,.06);
+}
+#painelAdmin h3{color:#2C3A4A;font-size:1.2rem;margin-bottom:15px}
+#painelAdmin table{width:100%;border-collapse:collapse;font-size:.85rem}
+#painelAdmin th{background:#2C3A4A;color:#fff;padding:10px;text-align:left}
+#painelAdmin td{padding:10px;border-bottom:1px solid #eee}
+#painelAdmin .vazio{text-align:center;color:#999;padding:20px}
+@media(max-width:768px){
+  .hero h1{font-size:2.5rem}
+  .hero .data-destaque{font-size:1.1rem}
+  section{padding:50px 15px}
+  .titulo-secao{font-size:1.5rem}
+  .cards-grid,.presentes-grid{grid-template-columns:1fr 1fr}
+  #painelAdmin table{font-size:.75rem}
+  #painelAdmin th,#painelAdmin td{padding:6px}
+  .observacoes-bloco{padding:20px 18px 15px}
+}
+@media(max-width:480px){
+  .hero h1{font-size:2rem;letter-spacing:3px}
+  .contador-item{padding:12px 15px;min-width:70px}
+  .contador-item .numero{font-size:1.8rem}
+  .cards-grid,.presentes-grid{grid-template-columns:1fr}
+  .modal{padding:25px 20px}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      <span class="nome-patricia">Patricia</span>
+      <span class="e-comercial">&amp;</span>
+      <span class="nome-mario">Mario</span>
+    </h1>
+    <p class="data-destaque">22 DE AGOSTO DE 2026</p>
+    <p class="subtitulo">13h às 17h · Santos, SP</p>
+    <div class="contador" id="contador">
+      <div class="contador-item"><span class="numero" id="dias">00</span><span class="rotulo">Dias</span></div>
+      <div class="contador-item"><span class="numero" id="horas">00</span><span class="rotulo">Horas</span></div>
+      <div class="contador-item"><span class="numero" id="minutos">00</span><span class="rotulo">Min</span></div>
+      <div class="contador-item"><span class="numero" id="segundos">00</span><span class="rotulo">Seg</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="detalhes">
+  <div class="section-inner">
+    <h2 class="titulo-secao">Detalhes do Evento</h2>
+    <p class="subtitulo-secao">Tudo que você precisa saber para celebrar conosco</p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icone-ad"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#2C3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><text x="12" y="21" text-anchor="middle" font-size="9" font-weight="700" fill="#2C3A4A" stroke="none">22</text></svg></div>
+        <h3>Data</h3>
+        <p>22 de Agosto de 2026</p>
+      </div>
+      <div class="card">
+        <div class="card-icone-ad"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#2C3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+        <h3>Horário</h3>
+        <p>Das 13h às 17h</p>
+      </div>
+      <div class="card">
+        <div class="card-icone-ad"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#2C3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+        <h3>Local</h3>
+        <p>A Casa Café Vinho & Massa</p>
+        <div class="card-spacer"></div>
+        <a href="https://www.instagram.com/acasa.cafevinhomassa/" target="_blank" class="btn-card btn-vinho">Instagram</a>
+      </div>
+      <div class="card">
+        <div class="card-icone-ad"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#2C3A4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+        <h3>Endereço</h3>
+        <p>Av. Washington Luís, 471<br>Boqueirão, Santos - SP</p>
+        <div class="card-spacer"></div>
+        <a href="https://maps.google.com/?q=Av.+Washington+Lu%C3%ADs,+471+Boqueir%C3%A3o+Santos+SP" target="_blank" class="btn-card btn-vinho">Ver Mapa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="presentes">
+  <div class="section-inner">
+    <h2 class="titulo-secao">Lista de Presentes</h2>
+    <p class="subtitulo-secao">Conheça as sugestões de presentes disponíveis!</p>
+    <div class="presentes-grid" id="presentesGrid">
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F373;</div><div class="presente-nome">Frigideira Wok Electrolux 28cm</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 199</div></div><div class="presente-actions"><a href="https://www.amazon.com.br/dp/B0CQRWZT5N" target="_blank" class="btn-amazon">&#x1F517; Ver no Amazon</a><button class="presente-btn" data-id="1">&#x1F381; Clique e escolha o presente</button></div></div>
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F4FD;&#xFE0F;</div><div class="presente-nome">Projetor Portátil HY320 Mini</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 369</div></div><div class="presente-actions"><a href="https://www.amazon.com.br/dp/B0FP4KGRKJ" target="_blank" class="btn-amazon">&#x1F517; Ver no Amazon</a><button class="presente-btn" data-id="2">&#x1F381; Clique e escolha o presente</button></div></div>
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1FA91;</div><div class="presente-nome">Mesa Lateral VASAGLE 2 Níveis</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 259</div></div><div class="presente-actions"><a href="https://www.amazon.com.br/dp/B0B18NB7ZF" target="_blank" class="btn-amazon">&#x1F517; Ver no Amazon</a><button class="presente-btn" data-id="3">&#x1F381; Clique e escolha o presente</button></div></div>
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F969;</div><div class="presente-nome">Espeto Giratório Elétrico Brothers Grill</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 149</div></div><div class="presente-actions"><a href="https://www.mercadolivre.com.br/espeto-giratorio-eletrico-churrasco-com-grelha-giratoria-brothers-grill/p/MLB44340554" target="_blank" class="btn-amazon">&#x1F517; Ver no Mercado Livre</a><button class="presente-btn" data-id="4">&#x1F381; Clique e escolha o presente</button></div></div>
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F9CA;</div><div class="presente-nome">Máquina de Gelo Mondial MG-12-GI</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 524</div></div><div class="presente-actions"><a href="https://www.mercadolivre.com.br/maquina-de-gelo-turbo-ice-premium-mondial-120w-mg-12-gi/p/MLB34698946" target="_blank" class="btn-amazon">&#x1F517; Ver no Mercado Livre</a><button class="presente-btn" data-id="5">&#x1F381; Clique e escolha o presente</button></div></div>
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F372;</div><div class="presente-nome">Kit 3 Travessas Refratárias Cerâmica</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 239</div></div><div class="presente-actions"><a href="https://www.amazon.com.br/dp/B0G51BW416" target="_blank" class="btn-amazon">&#x1F517; Ver no Amazon</a><button class="presente-btn" data-id="6">&#x1F381; Clique e escolha o presente</button></div></div>
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1FAD5;</div><div class="presente-nome">Jogo Fondue Viena 16 Peças</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 179</div></div><div class="presente-actions"><a href="https://www.carrefour.com.br/produto/jogo-fondue-viena-aco-carbono-16-pecas-preto-39631" target="_blank" class="btn-amazon">&#x1F517; Ver no Carrefour</a><button class="presente-btn" data-id="7">&#x1F381; Clique e escolha o presente</button></div></div>
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F9C0;</div><div class="presente-nome">Conjunto Raclette Queijo</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 144</div></div><div class="presente-actions"><a href="https://www.amazon.com.br/dp/B0GRSJXMMG" target="_blank" class="btn-amazon">&#x1F517; Ver no Amazon</a><button class="presente-btn" data-id="8">&#x1F381; Clique e escolha o presente</button></div></div>
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F52A;</div><div class="presente-nome">Kit Churrasco Tramontina 10 Peças</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 144</div></div><div class="presente-actions"><a href="https://www.mercadolivre.com.br/kit-churrasco-10-pecas-tramontina-facas-e-garfos-jumbo/p/MLB33796815" target="_blank" class="btn-amazon">&#x1F517; Ver no Mercado Livre</a><button class="presente-btn" data-id="9">&#x1F381; Clique e escolha o presente</button></div></div>
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F4FA;</div><div class="presente-nome">Smart TV HQ 24" HD Android 12</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 769</div></div><div class="presente-actions"><a href="https://www.amazon.com.br/dp/B0F4KYP1QD" target="_blank" class="btn-amazon">&#x1F517; Ver no Amazon</a><button class="presente-btn" data-id="10">&#x1F381; Clique e escolha o presente</button></div></div>
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F944;</div><div class="presente-nome">Ap. Jantar Oxford Mendi 20 Peças</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 339</div></div><div class="presente-actions"><a href="https://shopee.com.br/product/548911108/22197448335" target="_blank" class="btn-amazon">&#x1F517; Ver na Shopee</a><button class="presente-btn" data-id="11">&#x1F381; Clique e escolha o presente</button></div></div>
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F9CA;</div><div class="presente-nome">Frigobar Brastemp Retrô 76L Blue Zircon</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 2.164</div></div><div class="presente-actions"><a href="https://www.mercadolivre.com.br/frigobar-brastemp-retr-76-litros-blue-zircon-bra08hw-cor-azul/p/MLB32486919" target="_blank" class="btn-amazon">&#x1F517; Ver no Mercado Livre</a><button class="presente-btn" data-id="12">&#x1F381; Clique e escolha o presente</button></div></div>
+      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F4A1;</div><div class="presente-nome">Lustre Pendente Madeira Redondo 60cm</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 653</div></div><div class="presente-actions"><a href="https://produto.mercadolivre.com.br/MLB-2220691971-lustre-pendente-madeira-redondo-60-cm-_JM" target="_blank" class="btn-amazon">&#x1F517; Ver no Mercado Livre</a><button class="presente-btn" data-id="13">&#x1F381; Clique e escolha o presente</button></div></div>
+    </div>
+
+    <div class="observacoes-bloco">
+      <div class="obs-endereco-titulo">Dados para o envio dos itens escolhidos:</div>
+      <div class="obs-endereco-info">
+        Patricia Marino e / ou Mario Siqueira<br>
+        Rua Vahia de Abreu, 126 - ap. 72<br>
+        CEP 11050-120 | Boqueirão | Santos - SP
+      </div>
+      <div class="obs-sugestao">
+        &bull; Amigos, os itens acima são apenas sugestões, porém, sintam-se à vontade<br>
+        para prestigiar este momento com as escolhas que desejarem optar. &bull;
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modalPresente">
+  <div class="modal">
+    <button class="btn-fechar" onclick="fecharModal()">&times;</button>
+    <h2>&#x1F381; Sua escolha de presente:</h2>
+    <div class="modal-info">
+      <span class="emoji" id="modalEmoji">&#x1F373;</span>
+      <div class="label">Item escolhido</div>
+      <div class="item-nome" id="modalNome">---</div>
+      <div class="item-valor" id="modalValor">---</div>
+    </div>
+    <p style="font-size:.85rem;color:#888;margin-bottom:10px;font-weight:600">Após escolher o presente, confirme abaixo:</p>
+    <input class="modal-input" id="nomePresenteante" placeholder="Seu nome" maxlength="50">
+    <input class="modal-input" id="emailPresenteante" placeholder="Seu e-mail" type="email" maxlength="100">
+    <button class="btn-confirmar" onclick="confirmarPresente()">&#x2705; Confirmar Presente</button>
+    <p id="modalStatus" style="margin-top:12px;font-size:.85rem;font-weight:600;color:#5A8AA8"></p>
+  </div>
+</div>
+
+<section id="fotos">
+  <div class="section-inner" style="text-align:center">
+    <h2 class="titulo-secao">Compartilhe Suas Fotos</h2>
+    <p class="subtitulo-secao">Registre esse momento especial conosco!</p>
+    <p style="color:#555;margin-bottom:20px">Compartilhe conosco as fotos que registrou no evento clicando no botão abaixo.</p>
+    <a href="#" target="_blank" class="btn-foto">&#x1F4E4; Enviar Fotos</a>
+  </div>
+</section>
+
+<section id="secaoAdmin">
+  <div class="section-inner">
+    <button class="btn-senha" onclick="mostrarPainel()">&#x1F510; Painel dos Noivos</button>
+    <div id="painelAdmin">
+      <h3>&#x1F4CB; Presentes escolhidos</h3>
+      <div id="conteudoAdmin"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Feito com <span class="heart">&hearts;</span> para Patricia &amp; Mario &middot; 22.08.2026</p>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  // ========== FIREBASE ==========
+  var firebaseConfig = {
+    apiKey: "AIzaSyB7YEMgV2GmQy5kC4PLJ7xU2PAGzCYhMGs",
+    authDomain: "patricia-mario-presentes.firebaseapp.com",
+    databaseURL: "https://patricia-mario-presentes-default-rtdb.firebaseio.com",
+    projectId: "patricia-mario-presentes",
+    storageBucket: "patricia-mario-presentes.appspot.com",
+    messagingSenderId: "1054132795046",
+    appId: "1:1054132795046:web:7c3e9e8e6a5c0d8f3b9e7a"
+  };
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.database();
+  var refPresentes = db.ref('presentesEscolhidos');
+  var EM = 'mario_robertoss@yahoo.com.br';
+  var SENHA_PAINEL = 'patriciaemario2026';
+
+  // ========== CONTAGEM ==========
+  var dataEvento = new Date('2026-08-22T13:00:00-03:00').getTime();
+  function atualizarContador(){
+    var agora = new Date().getTime();
+    var diff = dataEvento - agora;
+    if(diff <= 0){document.getElementById('contador').innerHTML='<p style="color:#D4B87A;font-size:1.3rem">&#x1F389; É hoje!</p>';return;}
+    document.getElementById('dias').textContent   = (Math.floor(diff/(1000*60*60*24))<10?'0':'')+Math.floor(diff/(1000*60*60*24));
+    document.getElementById('horas').textContent  = (Math.floor((diff%(1000*60*60*24))/(1000*60*60))<10?'0':'')+Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    document.getElementById('minutos').textContent = (Math.floor((diff%(1000*60*60))/(1000*60))<10?'0':'')+Math.floor((diff%(1000*60*60))/(1000*60));
+    document.getElementById('segundos').textContent = (Math.floor((diff%(1000*60))/1000)<10?'0':'')+Math.floor((diff%(1000*60))/1000);
+  }
+  setInterval(atualizarContador,1000);
+  atualizarContador();
+
+  // ========== PRESENTES ==========
+  var presentes = [
+    {id:1,emoji:'\uD83C\uDF73',nome:'Frigideira Wok Electrolux 28cm',valor:'R$ 199',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0CQRWZT5N'},
+    {id:2,emoji:'\uD83D\uDCFD\uFE0F',nome:'Projetor Port\u00e1til HY320 Mini',valor:'R$ 369',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0FP4KGRKJ'},
+    {id:3,emoji:'\uD83E\uDE91',nome:'Mesa Lateral VASAGLE 2 N\u00edveis',valor:'R$ 259',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0B18NB7ZF'},
+    {id:4,emoji:'\uD83D\uDD69',nome:'Espeto Girat\u00f3rio El\u00e9trico Brothers Grill',valor:'R$ 149',loja:'Mercado Livre',link:'https://www.mercadolivre.com.br/espeto-giratorio-eletrico-churrasco-com-grelha-giratoria-brothers-grill/p/MLB44340554'},
+    {id:5,emoji:'\uD83E\uDDCA',nome:'M\u00e1quina de Gelo Mondial MG-12-GI',valor:'R$ 524',loja:'Mercado Livre',link:'https://www.mercadolivre.com.br/maquina-de-gelo-turbo-ice-premium-mondial-120w-mg-12-gi/p/MLB34698946'},
+    {id:6,emoji:'\uD83C\uDF72',nome:'Kit 3 Travessas Refrat\u00e1rias Cer\u00e2mica',valor:'R$ 239',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0G51BW416'},
+    {id:7,emoji:'\uD83E\uDD55',nome:'Jogo Fondue Viena 16 Pe\u00e7as',valor:'R$ 179',loja:'Carrefour',link:'https://www.carrefour.com.br/produto/jogo-fondue-viena-aco-carbono-16-pecas-preto-39631'},
+    {id:8,emoji:'\uD83E\uDDC0',nome:'Conjunto Raclette Queijo',valor:'R$ 144',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0GRSJXMMG'},
+    {id:9,emoji:'\uD83D\uDD2A',nome:'Kit Churrasco Tramontina 10 Pe\u00e7as',valor:'R$ 144',loja:'Mercado Livre',link:'https://www.mercadolivre.com.br/kit-churrasco-10-pecas-tramontina-facas-e-garfos-jumbo/p/MLB33796815'},
+    {id:10,emoji:'\uD83D\uDCFA',nome:'Smart TV HQ 24" HD Android 12',valor:'R$ 769',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0F4KYP1QD'},
+    {id:11,emoji:'\uD83E\uDD44',nome:'Ap. Jantar Oxford Mendi 20 Pe\u00e7as',valor:'R$ 339',loja:'Shopee',link:'https://shopee.com.br/product/548911108/22197448335'},
+    {id:12,emoji:'\uD83E\uDDCA',nome:'Frigobar Brastemp Retr\u00f4 76L Blue Zircon',valor:'R$ 2.164',loja:'Mercado Livre',link:'https://www.mercadolivre.com.br/frigobar-brastemp-retr-76-litros-blue-zircon-bra08hw-cor-azul/p/MLB32486919'},
+    {id:13,emoji:'\uD83D\uDCA1',nome:'Lustre Pendente Madeira Redondo 60cm',valor:'R$ 653',loja:'Mercado Livre',link:'https://produto.mercadolivre.com.br/MLB-2220691971-lustre-pendente-madeira-redondo-60-cm-_JM'}
+  ];
+
+  // IDs escolhidos (cache local)
+  var idsEscolhidos = [];
+
+  // ========== ATUALIZA BOTOES ==========
+  function atualizarBotoes(){
+    for(var i=0;i<presentes.length;i++){
+      var p = presentes[i];
+      var esc = idsEscolhidos.indexOf(p.id) !== -1;
+      var card = document.getElementById('presente-' + p.id);
+      if(!card) continue;
+      var btn = card.querySelector('.presente-btn');
+      if(btn){
+        if(esc){
+          btn.innerHTML = 'J\u00e1 escolhido';
+          btn.disabled = true;
+          btn.style.background = '#999';
+        } else {
+          btn.innerHTML = '\uD83C\uDF81 Clique e escolha o presente';
+          btn.disabled = false;
+          btn.style.background = '#7BA8C7';
+        }
+      }
+    }
+  }
+
+  // ========== FIREBASE: OUVIR MUDANÇAS ==========
+  refPresentes.on('value', function(snapshot){
+    idsEscolhidos = [];
+    var data = snapshot.val();
+    if(data){
+      for(var key in data){
+        if(data.hasOwnProperty(key)){
+          var item = data[key];
+          if(item && item.id && idsEscolhidos.indexOf(item.id) === -1){
+            idsEscolhidos.push(item.id);
+          }
+        }
+      }
+    }
+    atualizarBotoes();
+  });
+
+  // ========== MODAL ==========
+  var presenteAtual = 0;
+  window.abrirModal = function(id){
+    if(idsEscolhidos.indexOf(id) !== -1) return;
+    presenteAtual = id;
+    var p = presentes[id-1];
+    if(!p) return;
+    document.getElementById('modalEmoji').textContent = p.emoji;
+    document.getElementById('modalNome').textContent = p.nome;
+    document.getElementById('modalValor').textContent = p.valor;
+    document.getElementById('modalStatus').textContent = '';
+    document.getElementById('nomePresenteante').value = '';
+    document.getElementById('emailPresenteante').value = '';
+    document.getElementById('modalPresente').classList.add('active');
+  };
+
+  window.fecharModal = function(){
+    document.getElementById('modalPresente').classList.remove('active');
+  };
+
+  window.confirmarPresente = function(){
+    var nome = document.getElementById('nomePresenteante').value.trim();
+    var email = document.getElementById('emailPresenteante').value.trim();
+    if(nome === ''){ document.getElementById('modalStatus').textContent = 'Digite seu nome'; return; }
+    if(email === '' || email.indexOf('@') === -1 || email.indexOf('.') === -1){
+      document.getElementById('modalStatus').textContent = 'Digite um e-mail v\u00e1lido';
+      return;
+    }
+    if(presenteAtual === 0) return;
+    var p = presentes[presenteAtual-1];
+    if(!p) return;
+    if(idsEscolhidos.indexOf(presenteAtual) !== -1){
+      document.getElementById('modalStatus').textContent = 'Este presente j\u00e1 foi escolhido!';
+      return;
+    }
+
+    // Salvar no Firebase
+    var novoRef = refPresentes.push();
+    novoRef.set({
+      id: presenteAtual,
+      nome: nome,
+      email: email,
+      presente: p.nome,
+      valor: p.valor,
+      emoji: p.emoji,
+      timestamp: firebase.database.ServerValue.TIMESTAMP
+    }).then(function(){
+      document.getElementById('modalStatus').textContent = 'Obrigado(a), '+nome+'! Presente escolhido!';
+      presenteAtual = 0;
+      setTimeout(function(){ window.fecharModal(); }, 3000);
+    }).catch(function(){
+      document.getElementById('modalStatus').textContent = 'Erro ao salvar. Tente novamente.';
+    });
+  };
+
+  // Evento nos botoes
+  document.addEventListener('DOMContentLoaded', function(){
+    var btns = document.querySelectorAll('.presente-btn');
+    for(var i=0;i<btns.length;i++){
+      (function(btn){
+        btn.addEventListener('click', function(){
+          var id = parseInt(this.getAttribute('data-id'));
+          if(id) window.abrirModal(id);
+        });
+      })(btns[i]);
+    }
+    document.getElementById('modalPresente').addEventListener('click', function(e){
+      if(e.target === this) window.fecharModal();
+    });
+  });
+
+  // ========== PAINEL ==========
+  window.mostrarPainel = function(){
+    var senha = prompt('Digite a senha para acessar o painel:');
+    if(senha !== SENHA_PAINEL){ alert('Senha incorreta!'); return; }
+    document.getElementById('painelAdmin').style.display = 'block';
+    var conteudo = document.getElementById('conteudoAdmin');
+    conteudo.innerHTML = '<p class="vazio">Carregando...</p>';
+
+    refPresentes.once('value').then(function(snapshot){
+      var data = snapshot.val();
+      if(!data){
+        conteudo.innerHTML = '<p class="vazio">Nenhum presente escolhido ainda.</p>';
+        return;
+      }
+      var lista = [];
+      for(var key in data){
+        if(data.hasOwnProperty(key)) lista.push(data[key]);
+      }
+      lista.sort(function(a,b){ return (b.timestamp||0) - (a.timestamp||0); });
+
+      var html = '<table><thead><tr><th>Data</th><th>Presente</th><th>Valor</th><th>Nome</th><th>E-mail</th></tr></thead><tbody>';
+      for(var i=0;i<lista.length;i++){
+        var c = lista[i];
+        var d = c.timestamp ? new Date(c.timestamp).toLocaleString('pt-BR') : '---';
+        html += '<tr><td>'+d+'</td><td>'+(c.emoji||'')+' '+c.presente+'</td><td>'+c.valor+'</td><td>'+c.nome+'</td><td>'+c.email+'</td></tr>';
+      }
+      html += '</tbody></table>';
+      html += '<p style="margin-top:15px;font-size:.8rem;color:#999;text-align:center">Total: '+lista.length+' presente(s) escolhido(s)</p>';
+      conteudo.innerHTML = html;
+    });
+  };
+
+})();
+</script>
+</body>
+</html>
