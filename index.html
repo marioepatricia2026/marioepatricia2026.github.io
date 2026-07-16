@@ -9,21 +9,13 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Open Sans',sans-serif;color:#2C3A4A;background:#F0F5FA}
 .hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;text-align:center;
   background:linear-gradient(rgba(44,58,74,0.7),rgba(44,58,74,0.7)),url('CASAL1.jpg') center/cover no-repeat;
 }
 .hero-content{position:relative;z-index:2;padding:20px;max-width:900px}
-.hero h1{
-  font-size:4rem;font-weight:800;letter-spacing:6px;text-transform:uppercase;
-  margin-bottom:10px;line-height:1.2
-}
-.hero .nome-patricia{color:#D4B87A}
-.hero .nome-mario{color:#D4B87A}
+.hero h1{font-size:4rem;font-weight:800;letter-spacing:6px;text-transform:uppercase;margin-bottom:10px;line-height:1.2}
+.hero .nome-patricia,.hero .nome-mario{color:#D4B87A}
 .hero .e-comercial{color:#D4B87A;font-weight:300}
 .hero .data-destaque{font-size:1.4rem;color:rgba(255,255,255,0.9);font-weight:300;letter-spacing:3px;margin-bottom:8px}
 .hero .subtitulo{font-size:1.1rem;color:rgba(255,255,255,0.7);font-weight:300;letter-spacing:1px;margin-bottom:30px}
@@ -31,142 +23,78 @@ body{font-family:'Open Sans',sans-serif;color:#2C3A4A;background:#F0F5FA}
 .contador-item{background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);border-radius:12px;padding:18px 25px;min-width:100px;border:1px solid rgba(255,255,255,0.15)}
 .contador-item .numero{font-size:2.5rem;font-weight:800;color:#D4B87A;display:block;line-height:1}
 .contador-item .rotulo{font-size:.75rem;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:2px;margin-top:5px;display:block}
-section{padding:80px 20px}
-.section-inner{max-width:1100px;margin:0 auto}
-.titulo-secao{
-  text-align:center;font-size:2rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  margin-bottom:15px;color:#2C3A4A;
-}
+section{padding:80px 20px}.section-inner{max-width:1100px;margin:0 auto}
+.titulo-secao{text-align:center;font-size:2rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:15px;color:#2C3A4A}
 .titulo-secao::after{content:'';display:block;width:70px;height:3px;background:#D4B87A;margin:12px auto 0}
 .subtitulo-secao{text-align:center;color:#666;font-weight:300;font-size:1.1rem;margin-bottom:50px;max-width:700px;margin-left:auto;margin-right:auto}
-.card-icone-ad{
-  width:60px;height:60px;border-radius:50%;background:#D4B87A;
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 15px;position:relative;
-}
+.card-icone-ad{width:60px;height:60px;border-radius:50%;background:#D4B87A;display:flex;align-items:center;justify-content:center;margin:0 auto 15px}
 #detalhes{background:#F0F5FA}
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px}
-.card{
-  background:#fff;border-radius:12px;padding:30px 20px 25px;text-align:center;
-  box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;
-  display:flex;flex-direction:column;
-}
+.card{background:#fff;border-radius:12px;padding:30px 20px 25px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
 .card h3{font-size:1rem;font-weight:700;color:#5A8AA8;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
 .card p{font-size:.9rem;color:#555}
 .card-spacer{flex:1;min-height:30px}
-.btn-card{
-  display:inline-block;padding:8px 20px;border-radius:30px;
-  font-size:.8rem;font-weight:600;text-decoration:none;text-transform:uppercase;letter-spacing:1px;
-  transition:all .3s;align-self:center;
-}
+.btn-card{display:inline-block;padding:8px 20px;border-radius:30px;font-size:.8rem;font-weight:600;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all .3s;align-self:center}
 .btn-vinho{background:#800020;color:#fff;border:2px solid #800020}
 .btn-vinho:hover{background:#600018;border-color:#600018}
-#presentes{background:#7BA8C7}
-#presentes .titulo-secao{color:#fff}
+#presentes{background:#7BA8C7}#presentes .titulo-secao{color:#fff}
 #presentes .titulo-secao::after{background:#fff}
 #presentes .subtitulo-secao{color:rgba(255,255,255,0.85)}
 .presentes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.presente-card{
-  background:#fff;border-radius:12px;padding:25px 15px;text-align:center;
-  box-shadow:0 4px 15px rgba(0,0,0,.1);display:flex;flex-direction:column;
-}
+.presente-card{background:#fff;border-radius:12px;padding:25px 15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1);display:flex;flex-direction:column}
 .presente-card .content{flex:1}
 .presente-emoji{font-size:2.5rem;margin-bottom:8px}
 .presente-nome{font-weight:600;font-size:.9rem;color:#2C3A4A;margin-bottom:3px;line-height:1.3}
 .presente-valor{font-weight:700;font-size:1.2rem;color:#7BA8C7;margin-bottom:12px}
 .presente-actions{display:flex;flex-direction:column;gap:8px}
-.btn-amazon{
-  display:block;background:#fff;color:#2C3A4A;border:2px solid #7BA8C7;padding:8px 15px;border-radius:30px;
-  font-weight:600;font-size:.8rem;text-decoration:none;width:100%;
-}
+.btn-amazon{display:block;background:#fff;color:#2C3A4A;border:2px solid #7BA8C7;padding:8px 15px;border-radius:30px;font-weight:600;font-size:.8rem;text-decoration:none;width:100%}
 .btn-amazon:hover{background:#7BA8C7;color:#fff}
-.presente-btn{
-  background:#7BA8C7;color:#fff;border:none;padding:10px 15px;border-radius:30px;
-  font-weight:600;font-size:.85rem;cursor:pointer;width:100%;
-}
+.presente-btn{background:#7BA8C7;color:#fff;border:none;padding:10px 15px;border-radius:30px;font-weight:600;font-size:.85rem;cursor:pointer;width:100%}
 .presente-btn:hover{background:#5A8AA8}
 .presente-btn:disabled{background:#999;cursor:not-allowed}
-.observacoes-bloco{
-  margin-top:50px;padding:25px 30px 20px;background:rgba(255,255,255,0.1);border-radius:12px;
-  border:1px solid rgba(255,255,255,0.2);text-align:center;max-width:800px;margin-left:auto;margin-right:auto;
-}
-.obs-endereco-titulo{
-  font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;
-  color:#1A3A5C;margin-bottom:10px;text-align:center;
-}
-.obs-endereco-info{
-  font-size:.85rem;font-weight:400;color:#1A3A5C;line-height:1.7;text-align:center;margin-bottom:50px;
-}
-.obs-sugestao{
-  font-size:.82rem;font-weight:800;font-style:italic;color:rgba(255,255,255,0.9);
-  text-align:center;line-height:1.6;
-}
-.modal-overlay{
-  display:none;position:fixed;top:0;left:0;right:0;bottom:0;
-  background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center;
-}
+.observacoes-bloco{margin-top:50px;padding:25px 30px 20px;background:rgba(255,255,255,0.1);border-radius:12px;border:1px solid rgba(255,255,255,0.2);text-align:center;max-width:800px;margin-left:auto;margin-right:auto}
+.obs-endereco-titulo{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#1A3A5C;margin-bottom:10px}
+.obs-endereco-info{font-size:.85rem;font-weight:400;color:#1A3A5C;line-height:1.7;text-align:center;margin-bottom:50px}
+.obs-sugestao{font-size:.82rem;font-weight:800;font-style:italic;color:rgba(255,255,255,0.9);line-height:1.6}
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center}
 .modal-overlay.active{display:flex}
-.modal{
-  background:#fff;border-radius:16px;padding:35px;max-width:420px;width:90%;position:relative;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);
-}
+.modal{background:#fff;border-radius:16px;padding:35px;max-width:420px;width:90%;position:relative;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .modal h2{font-size:1.2rem;color:#2C3A4A;margin-bottom:15px}
-.modal-info{
-  background:#f9f9f9;border-radius:10px;padding:15px;margin-bottom:20px;border:1px solid #e8e8e8;
-}
+.modal-info{background:#f9f9f9;border-radius:10px;padding:15px;margin-bottom:20px;border:1px solid #e8e8e8}
 .modal-info .emoji{font-size:2rem;display:block;margin-bottom:5px}
 .modal-info .label{font-size:.85rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:1px}
 .modal-info .item-nome{font-size:1.1rem;font-weight:700;color:#2C3A4A;margin-top:3px}
 .modal-info .item-valor{font-size:1rem;font-weight:600;color:#7BA8C7;margin-top:3px}
-.modal-input{
-  width:100%;padding:12px 15px;border:2px solid #ddd;border-radius:8px;
-  font-size:.95rem;margin-bottom:12px;font-family:'Open Sans',sans-serif;outline:none;
-}
+.modal-input{width:100%;padding:12px 15px;border:2px solid #ddd;border-radius:8px;font-size:.95rem;margin-bottom:12px;font-family:'Open Sans',sans-serif;outline:none}
 .modal-input:focus{border-color:#7BA8C7}
-.btn-confirmar{
-  background:#2C3A4A;color:#fff;border:none;padding:12px 30px;border-radius:30px;
-  font-weight:600;cursor:pointer;font-size:.95rem;width:100%;
-}
+.btn-confirmar{background:#2C3A4A;color:#fff;border:none;padding:12px 30px;border-radius:30px;font-weight:600;cursor:pointer;font-size:.95rem;width:100%}
 .btn-confirmar:hover{background:#3A4A5A}
 .btn-fechar{position:absolute;top:10px;right:15px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#999}
 #fotos{background:#E3EEF5}
-.btn-foto{
-  display:inline-block;padding:14px 35px;border-radius:30px;background:#7BA8C7;color:#fff;
-  text-decoration:none;font-weight:600;font-size:1rem;margin-top:10px;
-}
+.btn-foto{display:inline-block;padding:14px 35px;border-radius:30px;background:#7BA8C7;color:#fff;text-decoration:none;font-weight:600;font-size:1rem;margin-top:10px}
 .btn-foto:hover{background:#5A8AA8}
 footer{text-align:center;padding:30px 20px;background:#2C3A4A;color:rgba(255,255,255,.5);font-size:.85rem}
 footer .heart{color:#D4B87A}
 #secaoAdmin{padding:20px 20px 60px}
-.btn-senha{
-  display:inline-block;padding:8px 20px;border-radius:30px;background:#2C3A4A;color:#fff;
-  border:none;font-weight:600;cursor:pointer;font-size:.8rem;margin-bottom:20px;
-}
-#painelAdmin{
-  display:none;background:#fff;border-radius:12px;padding:30px;margin-top:0;
-  box-shadow:0 4px 20px rgba(0,0,0,.06);
-}
+.btn-senha{display:inline-block;padding:8px 20px;border-radius:30px;background:#2C3A4A;color:#fff;border:none;font-weight:600;cursor:pointer;font-size:.8rem;margin-bottom:20px}
+#painelAdmin{display:none;background:#fff;border-radius:12px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
 #painelAdmin h3{color:#2C3A4A;font-size:1.2rem;margin-bottom:15px}
 #painelAdmin table{width:100%;border-collapse:collapse;font-size:.85rem}
 #painelAdmin th{background:#2C3A4A;color:#fff;padding:10px;text-align:left}
 #painelAdmin td{padding:10px;border-bottom:1px solid #eee}
 #painelAdmin .vazio{text-align:center;color:#999;padding:20px}
 @media(max-width:768px){
-  .hero h1{font-size:2.5rem}
-  .hero .data-destaque{font-size:1.1rem}
-  section{padding:50px 15px}
-  .titulo-secao{font-size:1.5rem}
+  .hero h1{font-size:2.5rem}.hero .data-destaque{font-size:1.1rem}
+  section{padding:50px 15px}.titulo-secao{font-size:1.5rem}
   .cards-grid,.presentes-grid{grid-template-columns:1fr 1fr}
-  #painelAdmin table{font-size:.75rem}
-  #painelAdmin th,#painelAdmin td{padding:6px}
+  #painelAdmin table{font-size:.75rem}#painelAdmin th,#painelAdmin td{padding:6px}
   .observacoes-bloco{padding:20px 18px 15px}
 }
 @media(max-width:480px){
   .hero h1{font-size:2rem;letter-spacing:3px}
-  .contador-item{padding:12px 15px;min-width:70px}
-  .contador-item .numero{font-size:1.8rem}
-  .cards-grid,.presentes-grid{grid-template-columns:1fr}
-  .modal{padding:25px 20px}
+  .contador-item{padding:12px 15px;min-width:70px}.contador-item .numero{font-size:1.8rem}
+  .cards-grid,.presentes-grid{grid-template-columns:1fr}.modal{padding:25px 20px}
 }
 </style>
 </head>
@@ -227,21 +155,7 @@ footer .heart{color:#D4B87A}
   <div class="section-inner">
     <h2 class="titulo-secao">Lista de Presentes</h2>
     <p class="subtitulo-secao">Conheça as sugestões de presentes disponíveis!</p>
-    <div class="presentes-grid" id="presentesGrid">
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F373;</div><div class="presente-nome">Frigideira Wok Electrolux 28cm</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 199</div></div><div class="presente-actions"><a href="https://www.amazon.com.br/dp/B0CQRWZT5N" target="_blank" class="btn-amazon">&#x1F517; Ver no Amazon</a><button class="presente-btn" data-id="1">&#x1F381; Clique e escolha o presente</button></div></div>
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F4FD;&#xFE0F;</div><div class="presente-nome">Projetor Portátil HY320 Mini</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 369</div></div><div class="presente-actions"><a href="https://www.amazon.com.br/dp/B0FP4KGRKJ" target="_blank" class="btn-amazon">&#x1F517; Ver no Amazon</a><button class="presente-btn" data-id="2">&#x1F381; Clique e escolha o presente</button></div></div>
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1FA91;</div><div class="presente-nome">Mesa Lateral VASAGLE 2 Níveis</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 259</div></div><div class="presente-actions"><a href="https://www.amazon.com.br/dp/B0B18NB7ZF" target="_blank" class="btn-amazon">&#x1F517; Ver no Amazon</a><button class="presente-btn" data-id="3">&#x1F381; Clique e escolha o presente</button></div></div>
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F969;</div><div class="presente-nome">Espeto Giratório Elétrico Brothers Grill</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 149</div></div><div class="presente-actions"><a href="https://www.mercadolivre.com.br/espeto-giratorio-eletrico-churrasco-com-grelha-giratoria-brothers-grill/p/MLB44340554" target="_blank" class="btn-amazon">&#x1F517; Ver no Mercado Livre</a><button class="presente-btn" data-id="4">&#x1F381; Clique e escolha o presente</button></div></div>
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F9CA;</div><div class="presente-nome">Máquina de Gelo Mondial MG-12-GI</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 524</div></div><div class="presente-actions"><a href="https://www.mercadolivre.com.br/maquina-de-gelo-turbo-ice-premium-mondial-120w-mg-12-gi/p/MLB34698946" target="_blank" class="btn-amazon">&#x1F517; Ver no Mercado Livre</a><button class="presente-btn" data-id="5">&#x1F381; Clique e escolha o presente</button></div></div>
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F372;</div><div class="presente-nome">Kit 3 Travessas Refratárias Cerâmica</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 239</div></div><div class="presente-actions"><a href="https://www.amazon.com.br/dp/B0G51BW416" target="_blank" class="btn-amazon">&#x1F517; Ver no Amazon</a><button class="presente-btn" data-id="6">&#x1F381; Clique e escolha o presente</button></div></div>
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1FAD5;</div><div class="presente-nome">Jogo Fondue Viena 16 Peças</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 179</div></div><div class="presente-actions"><a href="https://www.carrefour.com.br/produto/jogo-fondue-viena-aco-carbono-16-pecas-preto-39631" target="_blank" class="btn-amazon">&#x1F517; Ver no Carrefour</a><button class="presente-btn" data-id="7">&#x1F381; Clique e escolha o presente</button></div></div>
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F9C0;</div><div class="presente-nome">Conjunto Raclette Queijo</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 144</div></div><div class="presente-actions"><a href="https://www.amazon.com.br/dp/B0GRSJXMMG" target="_blank" class="btn-amazon">&#x1F517; Ver no Amazon</a><button class="presente-btn" data-id="8">&#x1F381; Clique e escolha o presente</button></div></div>
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F52A;</div><div class="presente-nome">Kit Churrasco Tramontina 10 Peças</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 144</div></div><div class="presente-actions"><a href="https://www.mercadolivre.com.br/kit-churrasco-10-pecas-tramontina-facas-e-garfos-jumbo/p/MLB33796815" target="_blank" class="btn-amazon">&#x1F517; Ver no Mercado Livre</a><button class="presente-btn" data-id="9">&#x1F381; Clique e escolha o presente</button></div></div>
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F4FA;</div><div class="presente-nome">Smart TV HQ 24" HD Android 12</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 769</div></div><div class="presente-actions"><a href="https://www.amazon.com.br/dp/B0F4KYP1QD" target="_blank" class="btn-amazon">&#x1F517; Ver no Amazon</a><button class="presente-btn" data-id="10">&#x1F381; Clique e escolha o presente</button></div></div>
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F944;</div><div class="presente-nome">Ap. Jantar Oxford Mendi 20 Peças</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 339</div></div><div class="presente-actions"><a href="https://shopee.com.br/product/548911108/22197448335" target="_blank" class="btn-amazon">&#x1F517; Ver na Shopee</a><button class="presente-btn" data-id="11">&#x1F381; Clique e escolha o presente</button></div></div>
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F9CA;</div><div class="presente-nome">Frigobar Brastemp Retrô 76L Blue Zircon</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 2.164</div></div><div class="presente-actions"><a href="https://www.mercadolivre.com.br/frigobar-brastemp-retr-76-litros-blue-zircon-bra08hw-cor-azul/p/MLB32486919" target="_blank" class="btn-amazon">&#x1F517; Ver no Mercado Livre</a><button class="presente-btn" data-id="12">&#x1F381; Clique e escolha o presente</button></div></div>
-      <div class="presente-card"><div class="content"><div class="presente-emoji">&#x1F4A1;</div><div class="presente-nome">Lustre Pendente Madeira Redondo 60cm</div><div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">R$ 653</div></div><div class="presente-actions"><a href="https://produto.mercadolivre.com.br/MLB-2220691971-lustre-pendente-madeira-redondo-60-cm-_JM" target="_blank" class="btn-amazon">&#x1F517; Ver no Mercado Livre</a><button class="presente-btn" data-id="13">&#x1F381; Clique e escolha o presente</button></div></div>
-    </div>
+    <div class="presentes-grid" id="presentesGrid"></div>
 
     <div class="observacoes-bloco">
       <div class="obs-endereco-titulo">Dados para o envio dos itens escolhidos:</div>
@@ -305,37 +219,54 @@ footer .heart{color:#D4B87A}
 (function(){
   "use strict";
 
-  // ========== FIREBASE ==========
-  var firebaseConfig = {
-    apiKey: "AIzaSyB7YEMgV2GmQy5kC4PLJ7xU2PAGzCYhMGs",
-    authDomain: "patricia-mario-presentes.firebaseapp.com",
-    databaseURL: "https://patricia-mario-presentes-default-rtdb.firebaseio.com",
-    projectId: "patricia-mario-presentes",
-    storageBucket: "patricia-mario-presentes.appspot.com",
-    messagingSenderId: "1054132795046",
-    appId: "1:1054132795046:web:7c3e9e8e6a5c0d8f3b9e7a"
-  };
-  firebase.initializeApp(firebaseConfig);
-  var db = firebase.database();
-  var refPresentes = db.ref('presentesEscolhidos');
-  var EM = 'mario_robertoss@yahoo.com.br';
-  var SENHA_PAINEL = 'patriciaemario2026';
+  var firebaseDisponivel = false;
+  var db = null;
+  var refPresentes = null;
 
-  // ========== CONTAGEM ==========
+  // Tenta iniciar Firebase - se falhar, o resto funciona sem ele
+  try {
+    if (typeof firebase !== 'undefined' && firebase.initializeApp) {
+      var firebaseConfig = {
+        apiKey: "AIzaSyCQJ6rtW2hiKp99ZYWIMp30DV4QQ5kDM_0",
+        authDomain: "evento-patriciaemario2026.firebaseapp.com",
+        databaseURL: "https://evento-patriciaemario2026-default-rtdb.firebaseio.com",
+        projectId: "evento-patriciaemario2026",
+        storageBucket: "evento-patriciaemario2026.firebasestorage.app",
+        messagingSenderId: "1051451258637",
+        appId: "1:1051451258637:web:ee7c286f03e8d473b2e244"
+      };
+      firebase.initializeApp(firebaseConfig);
+      db = firebase.database();
+      refPresentes = db.ref('presentesEscolhidos');
+      firebaseDisponivel = true;
+      console.log('Firebase conectado com sucesso!');
+    }
+  } catch(e) {
+    console.log('Firebase nao disponivel, usando apenas localStorage');
+  }
+
+  var EM = 'mario_robertoss@yahoo.com.br';
+  var SENHA = 'patriciaemario2026';
+
+  // ===== CONTAGEM REGRESSIVA =====
   var dataEvento = new Date('2026-08-22T13:00:00-03:00').getTime();
   function atualizarContador(){
     var agora = new Date().getTime();
     var diff = dataEvento - agora;
-    if(diff <= 0){document.getElementById('contador').innerHTML='<p style="color:#D4B87A;font-size:1.3rem">&#x1F389; É hoje!</p>';return;}
-    document.getElementById('dias').textContent   = (Math.floor(diff/(1000*60*60*24))<10?'0':'')+Math.floor(diff/(1000*60*60*24));
-    document.getElementById('horas').textContent  = (Math.floor((diff%(1000*60*60*24))/(1000*60*60))<10?'0':'')+Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-    document.getElementById('minutos').textContent = (Math.floor((diff%(1000*60*60))/(1000*60))<10?'0':'')+Math.floor((diff%(1000*60*60))/(1000*60));
-    document.getElementById('segundos').textContent = (Math.floor((diff%(1000*60))/1000)<10?'0':'')+Math.floor((diff%(1000*60))/1000);
+    if(diff <= 0){document.getElementById('contador').innerHTML='<p style="color:#D4B87A;font-size:1.3rem">&#x1F389; E hoje!</p>';return;}
+    var d = Math.floor(diff/(1000*60*60*24));
+    var h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    var m = Math.floor((diff%(1000*60*60))/(1000*60));
+    var s = Math.floor((diff%(1000*60))/1000);
+    document.getElementById('dias').textContent = (d<10?'0':'')+d;
+    document.getElementById('horas').textContent = (h<10?'0':'')+h;
+    document.getElementById('minutos').textContent = (m<10?'0':'')+m;
+    document.getElementById('segundos').textContent = (s<10?'0':'')+s;
   }
   setInterval(atualizarContador,1000);
   atualizarContador();
 
-  // ========== PRESENTES ==========
+  // ===== LISTA DE PRESENTES =====
   var presentes = [
     {id:1,emoji:'\uD83C\uDF73',nome:'Frigideira Wok Electrolux 28cm',valor:'R$ 199',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0CQRWZT5N'},
     {id:2,emoji:'\uD83D\uDCFD\uFE0F',nome:'Projetor Port\u00e1til HY320 Mini',valor:'R$ 369',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0FP4KGRKJ'},
@@ -352,20 +283,44 @@ footer .heart{color:#D4B87A}
     {id:13,emoji:'\uD83D\uDCA1',nome:'Lustre Pendente Madeira Redondo 60cm',valor:'R$ 653',loja:'Mercado Livre',link:'https://produto.mercadolivre.com.br/MLB-2220691971-lustre-pendente-madeira-redondo-60-cm-_JM'}
   ];
 
-  // IDs escolhidos (cache local)
-  var idsEscolhidos = [];
+  // ===== GERENCIAR IDs ESCOLHIDOS (localStorage + Firebase) =====
+  function getIdsEscolhidos() {
+    try {
+      return JSON.parse(localStorage.getItem('idsEscolhidos') || '[]');
+    } catch(e) { return []; }
+  }
 
-  // ========== ATUALIZA BOTOES ==========
+  function addIdEscolhido(id) {
+    var ids = getIdsEscolhidos();
+    if (ids.indexOf(id) === -1) {
+      ids.push(id);
+      localStorage.setItem('idsEscolhidos', JSON.stringify(ids));
+    }
+  }
+
+  // ===== SALVAR NO BANCO DE DADOS (localStorage + Firebase) =====
+  function salvarEscolha(dados) {
+    // Salva no localStorage
+    var lista = JSON.parse(localStorage.getItem('convidadosPresentes') || '[]');
+    lista.push(dados);
+    localStorage.setItem('convidadosPresentes', JSON.stringify(lista));
+
+    // Salva o ID
+    addIdEscolhido(dados.id);
+  }
+
+  // ===== ATUALIZAR BOTOES =====
   function atualizarBotoes(){
+    var idsEsc = getIdsEscolhidos();
     for(var i=0;i<presentes.length;i++){
       var p = presentes[i];
-      var esc = idsEscolhidos.indexOf(p.id) !== -1;
-      var card = document.getElementById('presente-' + p.id);
+      var esc = idsEsc.indexOf(p.id) !== -1;
+      var card = document.getElementById('presente-'+p.id);
       if(!card) continue;
       var btn = card.querySelector('.presente-btn');
       if(btn){
         if(esc){
-          btn.innerHTML = 'J\u00e1 escolhido';
+          btn.innerHTML = 'Ja escolhido';
           btn.disabled = true;
           btn.style.background = '#999';
         } else {
@@ -377,27 +332,29 @@ footer .heart{color:#D4B87A}
     }
   }
 
-  // ========== FIREBASE: OUVIR MUDANÇAS ==========
-  refPresentes.on('value', function(snapshot){
-    idsEscolhidos = [];
-    var data = snapshot.val();
-    if(data){
-      for(var key in data){
-        if(data.hasOwnProperty(key)){
-          var item = data[key];
-          if(item && item.id && idsEscolhidos.indexOf(item.id) === -1){
-            idsEscolhidos.push(item.id);
+  // ===== OUVIR FIREBASE (se disponivel) =====
+  if (firebaseDisponivel && refPresentes) {
+    refPresentes.on('value', function(snapshot){
+      var data = snapshot.val();
+      if (data) {
+        for (var key in data) {
+          if (data.hasOwnProperty(key) && data[key] && data[key].id) {
+            addIdEscolhido(data[key].id);
           }
         }
       }
-    }
-    atualizarBotoes();
-  });
+      atualizarBotoes();
+    }, function(error) {
+      console.log('Erro ao ler Firebase, usando dados locais');
+      atualizarBotoes();
+    });
+  }
 
-  // ========== MODAL ==========
+  // ===== MODAL =====
   var presenteAtual = 0;
   window.abrirModal = function(id){
-    if(idsEscolhidos.indexOf(id) !== -1) return;
+    var idsEsc = getIdsEscolhidos();
+    if(idsEsc.indexOf(id)!==-1) return;
     presenteAtual = id;
     var p = presentes[id-1];
     if(!p) return;
@@ -417,86 +374,109 @@ footer .heart{color:#D4B87A}
   window.confirmarPresente = function(){
     var nome = document.getElementById('nomePresenteante').value.trim();
     var email = document.getElementById('emailPresenteante').value.trim();
-    if(nome === ''){ document.getElementById('modalStatus').textContent = 'Digite seu nome'; return; }
-    if(email === '' || email.indexOf('@') === -1 || email.indexOf('.') === -1){
-      document.getElementById('modalStatus').textContent = 'Digite um e-mail v\u00e1lido';
-      return;
+
+    if(nome==''){document.getElementById('modalStatus').textContent='Digite seu nome';return;}
+    if(email==''||email.indexOf('@')===-1||email.indexOf('.')===-1){
+      document.getElementById('modalStatus').textContent='Digite um e-mail valido';return;
     }
-    if(presenteAtual === 0) return;
+    if(presenteAtual==0) return;
     var p = presentes[presenteAtual-1];
     if(!p) return;
-    if(idsEscolhidos.indexOf(presenteAtual) !== -1){
-      document.getElementById('modalStatus').textContent = 'Este presente j\u00e1 foi escolhido!';
-      return;
+    var idsEsc = getIdsEscolhidos();
+    if(idsEsc.indexOf(presenteAtual)!==-1){
+      document.getElementById('modalStatus').textContent='Este presente ja foi escolhido!';return;
     }
 
-    // Salvar no Firebase
-    var novoRef = refPresentes.push();
-    novoRef.set({
+    var dados = {
       id: presenteAtual,
       nome: nome,
       email: email,
       presente: p.nome,
       valor: p.valor,
       emoji: p.emoji,
-      timestamp: firebase.database.ServerValue.TIMESTAMP
-    }).then(function(){
-      document.getElementById('modalStatus').textContent = 'Obrigado(a), '+nome+'! Presente escolhido!';
-      presenteAtual = 0;
-      setTimeout(function(){ window.fecharModal(); }, 3000);
-    }).catch(function(){
-      document.getElementById('modalStatus').textContent = 'Erro ao salvar. Tente novamente.';
-    });
+      data: new Date().toLocaleString('pt-BR')
+    };
+
+    // 1. Salva no localStorage (sempre funciona!)
+    salvarEscolha(dados);
+
+    // 2. Tenta salvar no Firebase (se estiver disponivel)
+    if (firebaseDisponivel && refPresentes) {
+      try {
+        var novoRef = refPresentes.push();
+        novoRef.set({
+          id: presenteAtual,
+          nome: nome,
+          email: email,
+          presente: p.nome,
+          valor: p.valor,
+          emoji: p.emoji,
+          timestamp: firebase.database.ServerValue.TIMESTAMP
+        }).catch(function(err) {
+          console.log('Erro ao salvar no Firebase (dados ja salvos localmente)');
+        });
+      } catch(err) {
+        console.log('Erro ao conectar Firebase (dados ja salvos localmente)');
+      }
+    }
+
+    // 3. Tenta enviar notificacao por email
+    fetch('https://formsubmit.co/ajax/'+encodeURIComponent(EM),{
+      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({_subject:'Presente escolhido - Patricia & Mario',_captcha:'false',Nome:nome,Email:email,Presente:p.nome,Valor:p.valor})
+    }).catch(function(){});
+
+    // 4. Atualiza o botao na tela
+    addIdEscolhido(presenteAtual);
+    atualizarBotoes();
+
+    document.getElementById('modalStatus').textContent = 'Obrigado(a), '+nome+'! Presente escolhido!';
+    presenteAtual = 0;
+    setTimeout(function(){fecharModal();},3000);
   };
 
-  // Evento nos botoes
-  document.addEventListener('DOMContentLoaded', function(){
-    var btns = document.querySelectorAll('.presente-btn');
-    for(var i=0;i<btns.length;i++){
-      (function(btn){
-        btn.addEventListener('click', function(){
-          var id = parseInt(this.getAttribute('data-id'));
-          if(id) window.abrirModal(id);
-        });
-      })(btns[i]);
-    }
-    document.getElementById('modalPresente').addEventListener('click', function(e){
-      if(e.target === this) window.fecharModal();
-    });
+  document.getElementById('modalPresente').addEventListener('click',function(e){
+    if(e.target===this)fecharModal();
   });
 
-  // ========== PAINEL ==========
+  // ===== PAINEL =====
   window.mostrarPainel = function(){
     var senha = prompt('Digite a senha para acessar o painel:');
-    if(senha !== SENHA_PAINEL){ alert('Senha incorreta!'); return; }
-    document.getElementById('painelAdmin').style.display = 'block';
-    var conteudo = document.getElementById('conteudoAdmin');
-    conteudo.innerHTML = '<p class="vazio">Carregando...</p>';
-
-    refPresentes.once('value').then(function(snapshot){
-      var data = snapshot.val();
-      if(!data){
-        conteudo.innerHTML = '<p class="vazio">Nenhum presente escolhido ainda.</p>';
-        return;
-      }
-      var lista = [];
-      for(var key in data){
-        if(data.hasOwnProperty(key)) lista.push(data[key]);
-      }
-      lista.sort(function(a,b){ return (b.timestamp||0) - (a.timestamp||0); });
-
-      var html = '<table><thead><tr><th>Data</th><th>Presente</th><th>Valor</th><th>Nome</th><th>E-mail</th></tr></thead><tbody>';
-      for(var i=0;i<lista.length;i++){
-        var c = lista[i];
-        var d = c.timestamp ? new Date(c.timestamp).toLocaleString('pt-BR') : '---';
-        html += '<tr><td>'+d+'</td><td>'+(c.emoji||'')+' '+c.presente+'</td><td>'+c.valor+'</td><td>'+c.nome+'</td><td>'+c.email+'</td></tr>';
-      }
-      html += '</tbody></table>';
-      html += '<p style="margin-top:15px;font-size:.8rem;color:#999;text-align:center">Total: '+lista.length+' presente(s) escolhido(s)</p>';
-      conteudo.innerHTML = html;
-    });
+    if(senha!==SENHA){alert('Senha incorreta!');return;}
+    document.getElementById('painelAdmin').style.display='block';
+    var conv = JSON.parse(localStorage.getItem('convidadosPresentes') || '[]');
+    var c = document.getElementById('conteudoAdmin');
+    if(conv.length===0){c.innerHTML='<p class="vazio">Nenhum presente escolhido ainda.</p>';return;}
+    var h='<table><thead><tr><th>Data</th><th>Presente</th><th>Valor</th><th>Nome</th><th>E-mail</th></tr></thead><tbody>';
+    for(var i=conv.length-1;i>=0;i--){
+      var x=conv[i];
+      h+='<tr><td>'+x.data+'</td><td>'+x.emoji+' '+x.presente+'</td><td>'+x.valor+'</td><td>'+x.nome+'</td><td>'+x.email+'</td></tr>';
+    }
+    h+='</tbody></table><p style="margin-top:15px;font-size:.8rem;color:#999;text-align:center">Total: '+conv.length+' presente(s) escolhido(s)</p>';
+    c.innerHTML=h;
   };
 
+  // ===== RENDERIZAR GRADE =====
+  function renderGrid(){
+    var grid = document.getElementById('presentesGrid');
+    if(!grid) return;
+    var html = '';
+    for(var i=0;i<presentes.length;i++){
+      var p = presentes[i];
+      html += '<div class="presente-card" id="presente-'+p.id+'">';
+      html += '<div class="content">';
+      html += '<div class="presente-emoji">'+p.emoji+'</div>';
+      html += '<div class="presente-nome">'+p.nome+'</div>';
+      html += '<div class="presente-valor" style="color:#7BA8C7;font-weight:700;font-size:1.2rem;margin-bottom:12px">'+p.valor+'</div>';
+      html += '</div><div class="presente-actions">';
+      html += '<a href="'+p.link+'" target="_blank" class="btn-amazon">\uD83D\uDD17 Ver no '+p.loja+'</a>';
+      html += '<button class="presente-btn" onclick="abrirModal('+p.id+')">\uD83C\uDF81 Clique e escolha o presente</button>';
+      html += '</div></div>';
+    }
+    grid.innerHTML = html;
+    atualizarBotoes();
+  }
+  renderGrid();
 })();
 </script>
 </body>
