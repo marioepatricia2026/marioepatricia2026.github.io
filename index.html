@@ -42,28 +42,22 @@ body{font-family:'Open Sans',sans-serif;background:#F5F0E8;color:#1A3A5C}
 .obs-bloco{background:#1A3A5C;color:#fff;padding:30px;border-radius:12px;margin-top:40px;text-align:center;font-style:italic;font-weight:600;font-size:.95rem;line-height:1.8}
 .obs-bloco .obs-endereco-info{color:#fff;font-weight:400;margin-bottom:50px;font-style:normal;font-size:.9rem}
 .obs-bloco .obs-sugestao{font-style:italic;font-weight:700}
-#modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;display:none;align-items:center;justify-content:center}
-#modal-overlay.ativo{display:flex}
-#modal-conteudo{background:#fff;border-radius:16px;padding:35px;max-width:420px;width:90%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.2)}
-#modal-conteudo h2{font-size:1.3rem;margin-bottom:5px;color:#1A3A5C}
-#modal-conteudo .item-escolhido{font-size:2rem;margin:10px 0}
-#modal-conteudo .item-nome{font-weight:600;margin-bottom:20px;color:#555}
-#modal-conteudo label{display:block;font-size:.85rem;font-weight:600;margin-top:15px;margin-bottom:5px;color:#333}
-#modal-conteudo input{width:100%;padding:12px 15px;border:2px solid #ddd;border-radius:10px;font-size:.95rem;transition:border-color .2s}
-#modal-conteudo input:focus{border-color:#D4B87A;outline:none}
-#modal-conteudo .btn-confirmar{background:#1A3A5C;color:#fff;border:none;padding:14px;border-radius:30px;font-weight:700;font-size:1rem;cursor:pointer;width:100%;margin-top:20px;transition:background .2s}
-#modal-conteudo .btn-confirmar:hover{background:#2a5a8c}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;display:none;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal-content{background:#fff;border-radius:16px;padding:35px;max-width:420px;width:90%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.modal-content h2{font-size:1.3rem;margin-bottom:5px;color:#1A3A5C}
+.modal-content .item-emoji{font-size:2rem;margin:10px 0}
+.modal-content .item-nome{font-weight:600;margin-bottom:5px;color:#555}
+.modal-content .item-valor{color:#D4B87A;font-weight:700;font-size:1.1rem;margin-bottom:20px}
+.modal-content label{display:block;font-size:.85rem;font-weight:600;margin-top:15px;margin-bottom:5px;color:#333}
+.modal-content input{width:100%;padding:12px 15px;border:2px solid #ddd;border-radius:10px;font-size:.95rem;transition:border-color .2s}
+.modal-content input:focus{border-color:#D4B87A;outline:none}
+.modal-content .btn-confirmar{background:#1A3A5C;color:#fff;border:none;padding:14px;border-radius:30px;font-weight:700;font-size:1rem;cursor:pointer;width:100%;margin-top:20px;transition:background .2s}
+.modal-content .btn-confirmar:hover{background:#2a5a8c}
 .btn-fechar{position:absolute;top:12px;right:16px;background:0;border:none;font-size:1.5rem;cursor:pointer;color:#999}
 #modalStatus{text-align:center;color:#2e7d32;font-weight:600;margin-top:12px;min-height:24px}
 .modal-divider{border:0;border-top:1px solid #eee;margin:18px 0}
-#fotos-secao{background:#F5F0E8}
-.upload-area{border:2px dashed #ccc;border-radius:12px;padding:40px;text-align:center;cursor:pointer;background:#fff;margin-bottom:20px;transition:border-color .2s}
-.upload-area:hover{border-color:#D4B87A}
-.upload-area p{color:#888;margin-top:8px;font-size:.9rem}
-#fotos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
-#fotos-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px}
-.upload-btn{background:#D4B87A;color:#1A3A5C;border:none;padding:12px 30px;border-radius:30px;font-weight:700;cursor:pointer;font-size:.9rem;margin-top:10px;transition:background .2s}
-.upload-btn:hover{background:#c4a86a}
+#secaoAdmin{background:#fff}
 .btn-senha{display:inline-block;padding:8px 20px;border-radius:30px;background:#1A3A5C;color:#fff;border:none;font-weight:600;cursor:pointer;font-size:.8rem;margin-bottom:20px;transition:background .2s}
 .btn-senha:hover{background:#2a5a8c}
 #painelAdmin{display:none;background:#fff;border-radius:12px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
@@ -73,8 +67,6 @@ body{font-family:'Open Sans',sans-serif;background:#F5F0E8;color:#1A3A5C}
 #painelAdmin td{padding:10px 12px;border-bottom:1px solid #eee}
 #painelAdmin tr:hover td{background:#f8f6f2}
 .painel-info{font-size:.8rem;color:#888;margin-bottom:15px;padding:8px 12px;background:#f8f6f2;border-radius:8px}
-.presente-ja{color:#999;font-weight:600;font-size:.8rem;margin-top:5px}
-#secaoAdmin{background:#fff}
 footer{background:#1A3A5C;color:#fff;text-align:center;padding:25px;font-size:.85rem}
 .heart{color:#D4B87A}
 .vazio{color:#888;padding:20px;text-align:center}
@@ -133,20 +125,6 @@ para prestigiar este momento com as escolhas que desejarem optar. &bull;
 </div>
 </section>
 
-<section id="fotos-secao">
-<div class="section-inner">
-<h2 class="titulo-secao">📸 Compartilhe Suas Fotos</h2>
-<p class="subtitulo-secao">Poste suas fotos do nosso grande dia!</p>
-<div class="upload-area" onclick="document.getElementById('uploadInput').click()">
-<p style="font-size:2.5rem;margin-bottom:8px">📷</p>
-<p><strong>Clique para enviar suas fotos</strong></p>
-<p style="font-size:.8rem">Compartilhe seus melhores momentos</p>
-</div>
-<input type="file" id="uploadInput" accept="image/*" multiple style="display:none">
-<div id="fotos-grid"></div>
-</div>
-</section>
-
 <section id="secaoAdmin">
 <div class="section-inner">
 <button class="btn-senha" onclick="mostrarPainel()">🔐 Painel dos Noivos</button>
@@ -161,17 +139,18 @@ para prestigiar este momento com as escolhas que desejarem optar. &bull;
 <p>Feito com <span class="heart">♥</span> para Patricia & Mario · 22.08.2026</p>
 </footer>
 
-<div id="modal-overlay">
-<div id="modal-conteudo">
+<div class="modal-overlay" id="modalPresente">
+<div class="modal-content">
 <button class="btn-fechar" onclick="fecharModal()">✕</button>
 <h2>🎁 Sua escolha de presente:</h2>
-<div class="item-escolhido" id="modalEmoji"></div>
+<div class="item-emoji" id="modalEmoji"></div>
 <div class="item-nome" id="modalNome"></div>
+<div class="item-valor" id="modalValor"></div>
 <hr class="modal-divider">
 <label>Seu nome</label>
-<input type="text" id="inputNome" placeholder="Digite seu nome completo" required>
+<input type="text" id="nomePresenteante" placeholder="Digite seu nome completo">
 <label>Seu e-mail</label>
-<input type="email" id="inputEmail" placeholder="seu@email.com" required>
+<input type="email" id="emailPresenteante" placeholder="seu@email.com">
 <button class="btn-confirmar" onclick="confirmarPresente()">✅ Confirmar Presente</button>
 <div id="modalStatus"></div>
 </div>
@@ -186,8 +165,6 @@ para prestigiar este momento com as escolhas que desejarem optar. &bull;
 var firebaseDisponivel = false;
 var db = null;
 var refPresentes = null;
-// ===== ARRAY PARA ACUMULAR DADOS DO FIREBASE (CORREÇÃO) =====
-var dadosFirebaseConvidados = [];
 
 try {
 if (typeof firebase !== 'undefined' && firebase.initializeApp) {
@@ -236,7 +213,7 @@ var presentes = [
 {id:1,emoji:'🍳',nome:'Frigideira Wok Electrolux 28cm',valor:'R$ 199',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0CQRWZT5N'},
 {id:2,emoji:'📽️',nome:'Projetor Portátil HY320 Mini',valor:'R$ 369',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0FP4KGRKJ'},
 {id:3,emoji:'🪑',nome:'Mesa Lateral VASAGLE 2 Níveis',valor:'R$ 259',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0B18NB7ZF'},
-{id:4,emoji:'🔩',nome:'Espeto Giratório Elétrico Brothers Grill',valor:'R$ 149',loja:'Mercado Livre',link:'https://www.mercadolivre.com.br/espeto-giratorio-eletrico-churrasco-com-grelha-giratoria-brothers-grill/p/MLB44340554'},
+{id:4,emoji:'🕩',nome:'Espeto Giratório Elétrico Brothers Grill',valor:'R$ 149',loja:'Mercado Livre',link:'https://www.mercadolivre.com.br/espeto-giratorio-eletrico-churrasco-com-grelha-giratoria-brothers-grill/p/MLB44340554'},
 {id:5,emoji:'🧊',nome:'Máquina de Gelo Mondial MG-12-GI',valor:'R$ 524',loja:'Mercado Livre',link:'https://www.mercadolivre.com.br/maquina-de-gelo-turbo-ice-premium-mondial-120w-mg-12-gi/p/MLB34698946'},
 {id:6,emoji:'🍲',nome:'Kit 3 Travessas Refratárias Cerâmica',valor:'R$ 239',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0G51BW416'},
 {id:7,emoji:'🥕',nome:'Jogo Fondue Viena 16 Peças',valor:'R$ 179',loja:'Carrefour',link:'https://www.carrefour.com.br/produto/jogo-fondue-viena-aco-carbono-16-pecas-preto-39631'},
@@ -244,15 +221,8 @@ var presentes = [
 {id:9,emoji:'🔪',nome:'Kit Churrasco Tramontina 10 Peças',valor:'R$ 144',loja:'Mercado Livre',link:'https://www.mercadolivre.com.br/kit-churrasco-10-pecas-tramontina-facas-e-garfos-jumbo/p/MLB33796815'},
 {id:10,emoji:'📺',nome:'Smart TV HQ 24" HD Android 12',valor:'R$ 769',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0F4KYP1QD'},
 {id:11,emoji:'🥄',nome:'Ap. Jantar Oxford Mendi 20 Peças',valor:'R$ 339',loja:'Shopee',link:'https://shopee.com.br/product/548911108/22197448335'},
-{id:12,emoji:'🍝',nome:'Escorredor de Pratos Inox',valor:'R$ 89',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0C1J2K3L4'},
-{id:13,emoji:'🧊',nome:'Frigobar Brastemp Retrô 76L',valor:'R$ 2.164',loja:'Mercado Livre',link:'https://www.mercadolivre.com.br/frigobar-brastemp-retr-76-litros-blue-zircon-bra08hw-cor-azul/p/MLB32486919'},
-{id:14,emoji:'🥤',nome:'Liquidificador Oster 600W',valor:'R$ 179',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0C3L4M5N6'},
-{id:15,emoji:'💡',nome:'Lustre Pendente Madeira Redondo 60cm',valor:'R$ 653',loja:'Mercado Livre',link:'https://produto.mercadolivre.com.br/MLB-2220691971-lustre-pendente-madeira-redondo-60-cm-_JM'},
-{id:16,emoji:'🛏️',nome:'Jogo de Cama Queen 4 Peças',valor:'R$ 259',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0C5M6N7O8'},
-{id:17,emoji:'🍞',nome:'Torradeira Elétrica Britânia 4 Fendas',valor:'R$ 159',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0C7O8P9Q0'},
-{id:18,emoji:'🪑',nome:'Cadeira de Balanço Madeira',valor:'R$ 599',loja:'Mercado Livre',link:'https://www.mercadolivre.com.br/cadeira-balanco-madeira-macica-confortavel/p/MLB1234567'},
-{id:19,emoji:'🔥',nome:'Churrasqueira Elétrica Cadence 2000W',valor:'R$ 349',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0C9R0S1T2'},
-{id:20,emoji:'🥪',nome:'Sanduicheira Elétrica Mondial',valor:'R$ 109',loja:'Amazon',link:'https://www.amazon.com.br/dp/B0C0U1V2W3'}
+{id:12,emoji:'🧊',nome:'Frigobar Brastemp Retrô 76L',valor:'R$ 2.164',loja:'Mercado Livre',link:'https://www.mercadolivre.com.br/frigobar-brastemp-retr-76-litros-blue-zircon-bra08hw-cor-azul/p/MLB32486919'},
+{id:13,emoji:'💡',nome:'Lustre Pendente Madeira Redondo 60cm',valor:'R$ 653',loja:'Mercado Livre',link:'https://produto.mercadolivre.com.br/MLB-2220691971-lustre-pendente-madeira-redondo-60-cm-_JM'}
 ];
 
 // ===== GERENCIAR IDs ESCOLHIDOS =====
@@ -272,66 +242,47 @@ localStorage.setItem('idsEscolhidos', JSON.stringify(ids));
 
 // ===== GERAR CHAVE ÚNICA PARA EVITAR DUPLICATAS =====
 function gerarChaveUnica(dados) {
-return dados.nome + '|' + dados.presente + '|' + (dados.timestamp || Date.now());
+return dados.nome + '|' + dados.presente + '|' + (dados.timestamp || '');
 }
 
-// ===== SALVAR DADOS DE CONVIDADOS (localStorage + Firebase) =====
+// ===== MESCLAR DADOS LOCAIS + FIREBASE =====
+function mesclarDadosConvidados() {
+var dadosLocais = JSON.parse(localStorage.getItem('convidadosPresentes') || '[]');
+var dadosFirebase = JSON.parse(localStorage.getItem('convidadosPresentesFirebase') || '[]');
+var mapa = {};
+var resultado = [];
+for (var i = 0; i < dadosFirebase.length; i++) {
+var item = dadosFirebase[i];
+var chave = gerarChaveUnica(item);
+if (!mapa[chave]) { mapa[chave] = true; resultado.push(item); }
+}
+for (var j = 0; j < dadosLocais.length; j++) {
+var itemLocal = dadosLocais[j];
+var chaveLocal = gerarChaveUnica(itemLocal);
+if (!mapa[chaveLocal]) { mapa[chaveLocal] = true; resultado.push(itemLocal); }
+}
+return resultado;
+}
+
+// ===== SALVAR ESCOLHA =====
 function salvarEscolha(dados) {
-// Salva no localStorage
 var lista = JSON.parse(localStorage.getItem('convidadosPresentes') || '[]');
 lista.push(dados);
 localStorage.setItem('convidadosPresentes', JSON.stringify(lista));
-// Salva o ID
 addIdEscolhido(dados.id);
-// Salva no Firebase
+}
+
+function salvarNoFirebase(id, nome, email, p) {
 if (firebaseDisponivel && refPresentes) {
 try {
 var novoRef = refPresentes.push();
 novoRef.set({
-id: dados.id,
-nome: dados.nome,
-email: dados.email || '',
-presente: dados.presente,
-valor: dados.valor || '',
-emoji: dados.emoji || '',
+id: id, nome: nome, email: email,
+presente: p.nome, valor: p.valor, emoji: p.emoji,
 timestamp: firebase.database.ServerValue.TIMESTAMP
-}).catch(function(err) {
-console.log('Erro ao salvar no Firebase (dados ja salvos localmente)');
-});
-} catch(err) {
-console.log('Erro ao conectar Firebase (dados ja salvos localmente)');
+}).catch(function(err) { console.log('Erro Firebase'); });
+} catch(err) { console.log('Erro conexao Firebase'); }
 }
-}
-}
-
-// ===== FUNÇÃO PARA MESCLAR DADOS LOCAIS COM DADOS DO FIREBASE =====
-function mesclarDadosConvidados() {
-// Dados do localStorage local (escolhidos neste dispositivo)
-var dadosLocais = JSON.parse(localStorage.getItem('convidadosPresentes') || '[]');
-// Dados sincronizados do Firebase (CORREÇÃO: agora populados pelo listener)
-var dadosFirebase = JSON.parse(localStorage.getItem('convidadosPresentesFirebase') || '[]');
-// Mapa para evitar duplicatas (key = nome|presente)
-var mapa = {};
-var resultado = [];
-// Primeiro adiciona dados do Firebase
-for (var i = 0; i < dadosFirebase.length; i++) {
-var item = dadosFirebase[i];
-var chave = gerarChaveUnica(item);
-if (!mapa[chave]) {
-mapa[chave] = true;
-resultado.push(item);
-}
-}
-// Depois adiciona dados locais (evitando duplicar)
-for (var j = 0; j < dadosLocais.length; j++) {
-var itemLocal = dadosLocais[j];
-var chaveLocal = gerarChaveUnica(itemLocal);
-if (!mapa[chaveLocal]) {
-mapa[chaveLocal] = true;
-resultado.push(itemLocal);
-}
-}
-return resultado;
 }
 
 // ===== ATUALIZAR BOTOES =====
@@ -357,7 +308,7 @@ btn.style.background = '#7BA8C7';
 }
 }
 
-// ===== OUVIR FIREBASE (CORREÇÃO: AGORA TAMBÉM SALVA OS DADOS COMPLETOS) =====
+// ===== OUVIR FIREBASE (CORRIGIDO!) =====
 if (firebaseDisponivel && refPresentes) {
 refPresentes.on('value', function(snapshot){
 var data = snapshot.val();
@@ -366,31 +317,22 @@ if (data) {
 for (var key in data) {
 if (data.hasOwnProperty(key) && data[key]) {
 var entry = data[key];
-// CORREÇÃO: Salva o ID para marcar o botão
-if (entry.id) {
-addIdEscolhido(entry.id);
-}
-// CORREÇÃO: Salva os dados completos do convidado
+if (entry.id) { addIdEscolhido(entry.id); }
 if (entry.nome && entry.presente) {
 dadosFirebaseTemp.push({
-id: entry.id || 0,
-nome: entry.nome,
-email: entry.email || '',
-presente: entry.presente,
-valor: entry.valor || '',
-emoji: entry.emoji || '',
-timestamp: entry.timestamp || Date.now(),
+id: entry.id || 0, nome: entry.nome, email: entry.email || '',
+presente: entry.presente, valor: entry.valor || '',
+emoji: entry.emoji || '', timestamp: entry.timestamp || Date.now(),
 origem: 'firebase'
 });
 }
 }
 }
 }
-// CORREÇÃO: Salva os dados do Firebase no localStorage
 localStorage.setItem('convidadosPresentesFirebase', JSON.stringify(dadosFirebaseTemp));
 atualizarBotoes();
 }, function(error) {
-console.log('Erro ao ler Firebase, usando dados locais');
+console.log('Erro ao ler Firebase');
 atualizarBotoes();
 });
 }
@@ -426,137 +368,75 @@ presenteAtual = id;
 var p = presentes.find(function(x){return x.id===id;});
 if(!p) return;
 document.getElementById('modalEmoji').textContent = p.emoji;
-document.getElementById('modalNome').textContent = p.nome+' — '+p.valor;
-document.getElementById('inputNome').value = '';
-document.getElementById('inputEmail').value = '';
+document.getElementById('modalNome').textContent = p.nome;
+document.getElementById('modalValor').textContent = p.valor;
 document.getElementById('modalStatus').textContent = '';
-var btn = document.getElementById('presente-'+id).querySelector('.presente-btn');
-if(btn && btn.disabled){alert('Este presente já foi escolhido!');return;}
-document.getElementById('modal-overlay').classList.add('ativo');
+document.getElementById('nomePresenteante').value = '';
+document.getElementById('emailPresenteante').value = '';
+document.getElementById('modalPresente').classList.add('active');
 };
 
 window.fecharModal = function(){
-document.getElementById('modal-overlay').classList.remove('ativo');
+document.getElementById('modalPresente').classList.remove('active');
 presenteAtual = 0;
 };
 
 window.confirmarPresente = function(){
 if(!presenteAtual) return;
-var nome = document.getElementById('inputNome').value.trim();
-var email = document.getElementById('inputEmail').value.trim();
+var nome = document.getElementById('nomePresenteante').value.trim();
+var email = document.getElementById('emailPresenteante').value.trim();
 if(!nome){alert('Por favor, digite seu nome');return;}
 if(!email){alert('Por favor, digite seu e-mail');return;}
 if(!email.includes('@')){alert('Por favor, digite um e-mail válido');return;}
+var idsEsc = getIdsEscolhidos();
+if(idsEsc.indexOf(presenteAtual)!==-1){
+document.getElementById('modalStatus').textContent='Este presente ja foi escolhido!';return;
+}
 var p = presentes.find(function(x){return x.id===presenteAtual;});
 if(!p) return;
-var dados = {
-id: p.id,
-nome: nome,
-email: email,
-presente: p.nome,
-valor: p.valor,
-emoji: p.emoji,
-timestamp: Date.now()
-};
-// 1. Salva no localStorage e Firebase
+var dados = { id: presenteAtual, nome: nome, email: email, presente: p.nome, valor: p.valor, emoji: p.emoji, timestamp: Date.now() };
 salvarEscolha(dados);
-// 2. Atualiza o botao na tela
+salvarNoFirebase(presenteAtual, nome, email, p);
+try {
+fetch('https://formsubmit.co/ajax/'+encodeURIComponent(EM),{
+method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+body:JSON.stringify({_subject:'Presente escolhido - Patricia & Mario',_captcha:'false',Nome:nome,Email:email,Presente:p.nome,Valor:p.valor})
+}).catch(function(){});
+} catch(err) {}
 addIdEscolhido(presenteAtual);
 atualizarBotoes();
 document.getElementById('modalStatus').textContent = 'Obrigado(a), '+nome+'! Presente escolhido!';
-// 3. Tenta enviar notificacao por email via FormSubmit
-try {
-var formData = new FormData();
-formData.append('_subject', '🎁 Presente escolhido - Patricia & Mario');
-formData.append('_captcha', 'false');
-formData.append('Nome', nome);
-formData.append('Email', email);
-formData.append('Presente', p.nome);
-formData.append('Valor', p.valor);
-formData.append('_redirect', window.location.href);
-fetch('https://formsubmit.io/send/'+EM, {method:'POST',body:formData}).catch(function(){});
-} catch(err) {}
 presenteAtual = 0;
 setTimeout(function(){fecharModal();},3000);
 };
 
-document.getElementById('modal-overlay').addEventListener('click',function(e){
-if(e.target===this) fecharModal();
+document.getElementById('modalPresente').addEventListener('click',function(e){
+if(e.target===this)fecharModal();
 });
 
-// ===== PAINEL DOS NOIVOS (CORREÇÃO COMPLETA) =====
+// ===== PAINEL DOS NOIVOS (CORRIGIDO!) =====
 window.mostrarPainel = function(){
 var senha = prompt('Digite a senha para acessar o painel:');
 if(senha!==SENHA){alert('Senha incorreta!');return;}
 document.getElementById('painelAdmin').style.display='block';
-
-// CORREÇÃO: Usa a função de mesclagem que combina dados locais + Firebase
 var conv = mesclarDadosConvidados();
 var c = document.getElementById('conteudoAdmin');
-
-// Mostra estatísticas
 var qtdLocal = JSON.parse(localStorage.getItem('convidadosPresentes') || '[]').length;
 var qtdFirebase = JSON.parse(localStorage.getItem('convidadosPresentesFirebase') || '[]').length;
-
 if(conv.length===0){
-c.innerHTML = '<p class="vazio">Nenhum presente escolhido ainda.</p>';
-return;
+c.innerHTML = '<p class="vazio">Nenhum presente escolhido ainda.</p>'; return;
 }
-
-var htmlInfo = '<div class="painel-info">';
-htmlInfo += '📊 <strong>Total: ' + conv.length + ' presentes escolhidos</strong> · ';
-htmlInfo += '💻 ' + qtdLocal + ' neste dispositivo · ';
-htmlInfo += '☁️ ' + qtdFirebase + ' sincronizados do Firebase';
-htmlInfo += '</div>';
-
-var h = htmlInfo;
-h += '<table><thead><tr><th>Data</th><th>Presente</th><th>Valor</th><th>Nome</th><th>E-mail</th><th>Origem</th></tr></thead><tbody>';
+var h = '<div class="painel-info">📊 <strong>Total: ' + conv.length + ' presentes</strong> · 💻 ' + qtdLocal + ' neste dispositivo · ☁️ ' + qtdFirebase + ' do Firebase</div>';
+h += '<table><thead><tr><th>Data</th><th>Presente</th><th>Valor</th><th>Nome</th><th>E-mail</th></tr></thead><tbody>';
 for(var i=conv.length-1;i>=0;i--){
 var x=conv[i];
 var d=new Date(x.timestamp||Date.now());
 var dataStr = d.toLocaleDateString('pt-BR')+' '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-var origem = (x.origem === 'firebase') ? '☁️' : '💻';
-h += '<tr><td>'+dataStr+'</td><td>'+ (x.emoji||'🎁')+' '+x.presente+'</td><td>'+(x.valor||'-')+'</td><td><strong>'+x.nome+'</strong></td><td>'+x.email+'</td><td>'+origem+'</td></tr>';
+h += '<tr><td>'+dataStr+'</td><td>'+ (x.emoji||'🎁')+' '+x.presente+'</td><td>'+(x.valor||'-')+'</td><td><strong>'+x.nome+'</strong></td><td>'+x.email+'</td></tr>';
 }
 h += '</tbody></table>';
 c.innerHTML = h;
 };
-
-// ===== UPLOAD DE FOTOS (localStorage) =====
-document.addEventListener('DOMContentLoaded', function(){
-var input = document.getElementById('uploadInput');
-if(input){
-input.addEventListener('change', function(e){
-var files = e.target.files;
-if(!files.length) return;
-for(var k=0;k<files.length;k++){
-(function(file){
-var reader = new FileReader();
-reader.onload = function(ev){
-var fotos = JSON.parse(localStorage.getItem('fotosEvento') || '[]');
-fotos.push(ev.target.result);
-localStorage.setItem('fotosEvento', JSON.stringify(fotos));
-renderFotos();
-};
-reader.readAsDataURL(file);
-})(files[k]);
-}
-});
-}
-renderFotos();
-});
-
-function renderFotos(){
-var grid = document.getElementById('fotos-grid');
-if(!grid) return;
-var fotos = JSON.parse(localStorage.getItem('fotosEvento') || '[]');
-if(fotos.length===0){grid.innerHTML='<p class="vazio">Nenhuma foto compartilhada ainda.</p>';return;}
-var h='';
-for(var i=0;i<fotos.length;i++){
-h+='<img src="'+fotos[i]+'" alt="Foto do evento">';
-}
-grid.innerHTML = h;
-}
 
 })();
 </script>
